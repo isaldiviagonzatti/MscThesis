@@ -7,9 +7,9 @@
 import arcgis
 from arcgis.gis import GIS
 
-gis = GIS("https://wur-girs.maps.arcgis.com",'wur-girs\\luis.saldiviagonzatti@wur.nl', '8RX96L9#g5#b', verify_cert=False)
+gis = GIS("https://wur-girs.maps.arcgis.com",'wur-girs\\email addres', 'key', verify_cert=False)
 
-save_to= r'C:\Users\isaldiviagonzatti\OneDrive - Wageningen University & Research\WUR\Thesis\MSc_ENR_Pineapple\Spatial_Optimization'
+save_to= r'\output'
 
 # Download all data from a user
 def downloadUserItems(owner, downloadFormat):
