@@ -54,13 +54,13 @@ Other
 
 ### FCM
 
-* Code to generate transcript from interviews [transcriptWhisper](FCM/code/transcriptWhisper.ipynb)
+* Code to generate transcript from interviews [transcriptWhisper](FCM\code\transcriptWhisper.ipynb)
 
-* Transform survey responses data for FCM analysis [expertsResClean](FCM/code/expertsResClean.ipynb)
+* Transform survey responses data for FCM analysis [expertsResClean](FCM\code\expertsResClean.ipynb)
 
-* FCM analysis [FCMpy_analysis](FCM/code/FCMpy_analysis.ipynb)
+* FCM analysis [FCMpy_analysis](FCM\code\FCMpy_analysis.ipynb)
 
-* Plots for proof of Fuzzy Logic [proofFuzzyLogic](FCM/code/proofFuzzyLogic.ipynb)
+* Plots for proof of Fuzzy Logic [proofFuzzyLogic](FCM\code\proofFuzzyLogic.ipynb)
 
 
 ## License
