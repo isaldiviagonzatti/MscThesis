@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-
 @author: isaldiviagonzatti
 """
 
 import arcgis
 from arcgis.gis import GIS
 
-gis = GIS("https://wur-girs.maps.arcgis.com",'wur-girs\\email addres', 'key', verify_cert=False)
+gis = GIS("https://wur-girs.maps.arcgis.com",'wur-girs\\email address', 'key', verify_cert=False)
 
 save_to= r'\output'
 
@@ -29,7 +28,7 @@ def downloadUserItems(owner, downloadFormat):
 
 
 # Function takes in two parameters. Username and the type of download format
-downloadUserItems('saldi004_WUR_GIRS', downloadFormat='File Geodatabase')
+downloadUserItems('USERNAME', downloadFormat='File Geodatabase')
 
 
 roadsCR=gis.content.get("07245640fce14f519c21150c7a3f5ce5")
