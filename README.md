@@ -62,7 +62,6 @@ Other
 
 * Plots for proof of Fuzzy Logic [proofFuzzyLogic](FCM/code/proofFuzzyLogic.ipynb)
 
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)

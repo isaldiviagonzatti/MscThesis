@@ -54,14 +54,28 @@ Other
 
 ### FCM
 
-* Code to generate transcript from interviews [transcriptWhisper](FCM\code\transcriptWhisper.ipynb)
+* Code to generate transcript from interviews [transcriptWhisper](FCM/code/transcriptWhisper.ipynb)
 
-* Transform survey responses data for FCM analysis [expertsResClean](FCM\code\expertsResClean.ipynb)
+* Transform survey responses data for FCM analysis [expertsResClean](FCM/code/expertsResClean.ipynb)
 
-* FCM analysis [FCMpy_analysis](FCM\code\FCMpy_analysis.ipynb)
+* FCM analysis [FCMpy_analysis](FCM/code/FCMpy_analysis.ipynb)
 
-* Plots for proof of Fuzzy Logic [proofFuzzyLogic](FCM\code\proofFuzzyLogic.ipynb)
+* Plots for proof of Fuzzy Logic [proofFuzzyLogic](FCM/code/proofFuzzyLogic.ipynb)
 
+<<<<<<< HEAD
+=======
+[Visualise and save road network](FLP/code/streetNetwork_manipulation.ipynb)
+FLP\code\candidatesGrid.ipynb
+FLP\code\distanceMatrix.ipynb
+FLP\code\downloadAPIarcGIS.py
+FLP\code\mergeAll.ipynb
+FLP\code\nearestPALstreet.ipynb
+FLP\code\optimisation.ipynb
+FLP\code\PAL_manipulation.ipynb
+FLP\code\planesReguladores_zoning.ipynb
+FLP\code\resultsOpti.ipynb
+FLP\code\sanCarlosPlan.ipynb
+>>>>>>> 3e414f6e335d425aa65215ba8309dd5b1f92c846
 
 ## License
 
