@@ -28,7 +28,7 @@ The MSc thesis is divided into two main projects: Facility Location Problem (FLP
 
 The data processing was divided into different scripts. These must be run in order:
 
-[Visualise and save road network](FLP\code\streetNetwork_manipulation.ipynb)
+[Visualise and save road network](FLP/code/streetNetwork_manipulation.ipynb)
 FLP\code\candidatesGrid.ipynb
 FLP\code\distanceMatrix.ipynb
 FLP\code\downloadAPIarcGIS.py
