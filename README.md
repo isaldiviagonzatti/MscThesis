@@ -42,7 +42,7 @@ The data processing was divided into different scripts. Some require data genera
 
 * Run FLP optimisation [optimisation](FLP/code/optimisation.ipynb)
 
-* Analyse and plot optimisation results [nearestPALstreet](FLP/code/FLP/code/resultsOpti.ipynb)
+* Analyse and plot optimisation results [resultsOpti](FLP/code/resultsOpti.ipynb)
 
 Other
 
