@@ -1,4 +1,28 @@
-.ipynb_checkpoints
-.DS_Store
-/cache
-.bak
+
+## python
+*.ipynb_checkpoints
+
+## macos
+*.DS_Store
+
+## notepad++
+*.bak
+
+## latex
+*.aux
+*.lof
+*.log
+*.out
+*.toc
+*.bbl
+*.gz
+*.blg
+*.acn
+*.ist
+*.lot
+**/svg-inkscape
+
+## folders
+/literature
+**/cache
+
