@@ -11,9 +11,9 @@
 
 \begin{itemize}
 
-\item Name, organisation, purpose of the organisation.
+\item Name, organisation, the purpose of the organisation.
 \item What do you understand by Circular Economy?
-\item What do you understand by valorisation of stubble?
+\item What do you understand by \textit{valorisation of stubble}?
 \item What is the current situation of the valorisation of stubble in Costa Rica?
 \item What factors influence the valorisation of Costa Rican pineapple stubble? Please indicate at least four. \textit{(Sector structure)}
 \item What factors are influenced by the valorisation of Costa Rican pineapple stubble? \textit{(Outcome)}
@@ -21,13 +21,14 @@
 \item Identify three key drivers that can boost the valorisation of pineapple stubble and, consequently, the circularity of the Costa Rican pineapple sector. Think of the national, international scale, factors external to the production chain.
 \item Do you perceive any trends in the factors previously mentioned in the last 5 years?
 \item Who are the most important actors in the stubble valorisation process?
-\item Which valorisation options seem most feasible to you, and why? Think about the technological, economic, and commercial aspects of the valorisation.
+\item Which valorisation options seem most feasible to you, and why? Think about the technological, economic, and commercial aspects of valorisation.
 
 \end{itemize}
 
 
 
 \subsection{Concepts Description}
+\label{conceptsGlossary}
 
 \begin{xltabular}{\textwidth}{XX}
 \caption{Concepts present in the FCM and their description}
@@ -51,7 +52,7 @@
 Regulation of stubble management &
   Regulate how the stubble can be managed (what agrochemicals can be used,  when is fire allowed, etc.). \\ \hline
 Good image of the industry &
-  How consumers, investors, the government, and the population in general perceive the industry. \\ \hline
+  How consumers, investors, the government, and the population perceive the industry. \\ \hline
 Collaboration/Communication &
   Between pineapple companies, academia, government, social communities, and other industries. \\ \hline
 Pollution (soil, air and water) &
@@ -67,7 +68,7 @@ Uneven terrain &
 Land availability &
   Availability of the land to plant. As long as there is stubble in the field, the land is not available. \\ \hline
 Employment &
-  Number of people employed in the PA industry or in a PAL-related industry. \\ \hline
+  The number of people employed in the PA industry or in a PAL-related industry. \\ \hline
 Extraction from the field &
   Extracting the PAL from the field. \\ \hline
 Funding &
@@ -83,7 +84,7 @@ Rain &
 Stable fly &
   Number of stable flies. \\ \hline
 Government presence &
-  How involved are local and national governments in the pineapple sector and in PAL-valorisation development. \\ \hline
+  How involved are local and national governments in the pineapple sector and PAL-valorisation development. \\ \hline
 Green consumers &
   Consumers who demand products that have undergone an eco-friendly production process and that safeguards the planets' resources. \\ \hline
 Pineapple production productivity &
@@ -96,14 +97,14 @@ Profitability of pineapple companies &
   Company's ability to generate profit. \\ \hline
 Business risk &
   All events that may affect or cause losses to a company within the framework of its economic activity. \\ \hline
-Community's health/wellbeing &
+Community's health/well-being &
   Health and social and environmental well-being of the communities directly or indirectly affected by PA production. \\ \hline
 Industry sustainability &
   Practice of using natural resources in a way that preserves them for future generations. \\ \hline
 Company  size &
   Refers to the amount of resources that the company has: hectares, workers, machinery. \\ \hline
 Industry's transparency/openness &
-  In relation to operations, cultivation methods, use of supplies and stubble management. \\ \hline
+  Regarding operations, cultivation methods, use of supplies and stubble management. \\ \hline
 Use of agrochemicals &
   Chemicals used in to enhance crop growth, protect against pests and diseases, and manage the stubble (fertilizers, herbicides, insecticides). \\ \hline
 valorisation of PAL &
@@ -114,6 +115,49 @@ Ranchers' productivity &
   It can be measured in terms of the number of animals raised, the amount of meat or milk produced, the value of their sales, or the profits they generate.
 
 \end{xltabular}
+
+\clearpage
+
+
+\subsection{FCM Quantitative Aggregation}
+\label{quantitativeAgg}
+
+For the quantitative aggregation, the FCMpy package, a Python package for building FCMs and implementing scenario analysis, was used \citep{mkhitaryan2022fcmpy}. The data extracted from the questionnaire responses were transformed to fit the structure required to use the package. We aggregate the responses by converting the categorical ratings to numerical weights. Sometimes, researchers use a scale to weigh the consistency of stakeholders' answers, giving more weight to experts who are believed to be more knowledgeable. In our case, we have assumed that all individual FCMs are equally valid and, thus, the same weight was applied to all maps. Aggregation of individual FCMs can be performed in several ways, the averaging of all individual matrices being the simplest \citep{jetter2014fuzzy}. This aggregation approach is usually followed by normalisation of the values to narrow the weights of the connections in the range [-1, 1]. Several examples using this approach can be found in the literature (see \citep{lopolito2020combined, morone2021using, morone2019promote}. In other cases, the authors do not explicitly explain the method used, and it is simply mentioned that the aggregation is handled by the software selected to perform the analysis \cite{konti2022determinants, kokkinos2020circular, falcone2020use}. In our case, we implement fuzzy logic to perform the aggregation of individual FCMs, as recommended by the developers of the FCMpy package. The aggregation via fuzzy logic, although not common, has been used in the past \citep{nasirzadeh2020modelling, amini2022combined}. This method has the advantage of using membership function maps, which are useful when it is hard to define a specific cutoff value for a linguistic term \citep{wang2015study}. Thus, this technique is well-suited to FCM applications where the input is created from human expert knowledge. 
+
+Conversion to numerical weights requires four steps: 1) define the fuzzy membership functions, 2) apply a fuzzy implication rule, 3) combine the membership functions, and 4) defuzzify the aggregated membership functions to derive numerical causal weights \citep{mkhitaryan2022fcmpy}. In Step 1) we define a triangular membership function that represents the linguistic terms, as can be observed in \cref{trapmf}. Step 2) requires calculating the proportion of the answers to each linguistic term for a given concept and then applying a fuzzy implication rule to allocate the weights to the corresponding membership functions. The Mamdani minimum fuzzy implication rule is used, which applies a function to compute the element-wise minimum of the array elements to cut the membership function at the endorsement level, as shown in \cref{mamdani}. The aggregation of the membership function takes place in step 3), using a fMax function, simply computing the element-wise maximum of array elements, in this case, to ``merge" the membership functions, resulting in a single shape representing the level of endorsement for a particular connection. Finally, we defuzzify the aggregated functions using the centre-of-gravity method, resulting in a single value for each concept, as shown in \cref{defuzz}. At the end of the aggregation of individual FCMs via fuzzy logic, we obtain a value for each connection representing its social (aggregated) weight. In practice, the result is a matrix $n \times n$ whose element $ E_{ij} $ indicates the value of the weight $ W_{ji} $ between concept $ C_{j} $ and concept $ C_{i} $. 
+
+
+
+\begin{figure}\centering
+\subfloat[Triangular membership functions]{\label{trapmf}\includesvg[width=.45\linewidth]{fig/trapmf.svg}}\hfill
+\subfloat[Fuzzy implication rules]{\label{mamdani}\includesvg[width=.45\linewidth]{fig/mamdani.svg}}\par 
+\subfloat[Defuzzification of the aggregated membership functions]{\label{defuzz}\includesvg[width=.45\linewidth]{fig/defuzz.svg}}
+\caption*{Adapted from \cite{mkhitaryan2022fcmpy}}
+\label{FCMpy}
+\end{figure}
+
+
+With the aggregated matrix, we can now perform a dynamic analysis of the FCM. As \cite{edwards2021building} mention, in a mathematical sense, the output of the analysis is static rather than dynamic, so they adopt the term ‘quasi-dynamic’ to indicate the dynamic character of the interpretation of the changes in the system. This quasi-dynamic analysis allows us to see where the system will go if things continue as they are, i.e., to determine the steady state of the system \citep{ozesmi2004ecological}. The steady-state value taken by each concept reflects its importance within the system according to stakeholders' knowledge and provides an idea of the evolution of the system in current circumstances \citep{lopolito2020combined}. 
+
+To compute the steady state of the system, a vector of initial states of variables (usually set to 0 or 1) is first multiplied by the aggregated adjacency matrix of the FCM. Then, the resulting transformed vector is repeatedly multiplied by the adjacency matrix and transformed until the system converges to a steady state. To maintain the values in the range [0,1] and reach a steady state, an inference method, including a threshold function, is used in each iteration:
+
+\begin{equation}
+\label{equation1} 
+A_i^{t+1} = f \left( A_i + \sum_{j=1}^{n} A_j^t W_{ji} \right), 
+\end{equation}
+
+where $A_i^{t+1}$ is the value of concept $C_i$ in the simulation step $t+1$, $A_i^{t}$ is the value of concept $C_i$ at simulation step t, $A_j^{t+1}$ is the value of concept $C_j$ at time t, $W_{ji}$ is the weight of the interconnection from concept $C_j$ to concept $C_i$, and $f$ is the Sigmoid bounded monotonic increasing function in the form
+
+\begin{equation}
+\label{equation2}  
+f(x) = \frac{1}{1+e^{-\delta x}}, \quad  x \in \mathbb{R}, 
+\end{equation}
+
+where $x$ is the defuzzified value and $\delta$ is a steepness parameter for the Sigmoid function. Note that this non-negative transformation allows a better understanding and representation of activation levels of variables \citep{ozesmi2004ecological}. The inference method shown in \cref{equation1} is the modified Kosko function, a modified version of the Kosko rule that is suitable when we require updating the activation value of concepts that are not influenced by other concepts \citep{sujamol2018study}. A rescaled inference rule is also included in most FCM packages and software programmes, although its properties are not well explained. To our knowledge, the rescaled inference rule was introduced by \cite{papageorgiou2011new} to avoid conflicts in which the initial values of the concepts are 0 or 0.5, or in cases where the initial values of concepts are not known. However, this inference method was applied in the context of health informatics, and therefore we decided not to consider it for our study. 
+
+It is important to note that iterations are not related to time. This property allows an interpretation of the dynamics of the different factors relative to the other factors or relative to other descriptions of the system \citep{edwards2021building, diniz2015mapping}. In this sense, it is possible to evaluate different scenarios and outcomes by asking ``what-if" questions and simulating different conditions or policy choices. This can be used to compare what policy decisions or changes in the system would have the greatest effect on the variables of interest.
+
+
 
 \clearpage
 

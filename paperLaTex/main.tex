@@ -19,8 +19,7 @@
 
 \usepackage{etoolbox}
 \renewcommand{\bibname}{}
-\usepackage{natbib}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, pagebackref]{hyperref}
 \usepackage{amssymb,amsmath,amsfonts,booktabs,eurosym,float,graphicx,color,comment,caption,pdflscape,subcaption,array, multirow, titlesec}
 %\usepackage[twoside,margin=2cm]{geometry}
 \usepackage[top=2cm,bottom=4cm,outer=2cm,inner=2cm]{geometry}
@@ -37,13 +36,26 @@
 %add spanish to use in Resumen, main language should last
 \usepackage[spanish,british]{babel}
 
+% backref format 
+\renewcommand\backrefxxx[3]{%
+  \hyperlink{page.#1}{$\hookleftarrow $#1}%
+}
 
+% hyperref colors
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage{url}
 \usepackage{appendix}
 \usepackage{setspace}
 \usepackage[super]{nth}
 \usepackage{arydshln}
 \usepackage{environ}
-\usepackage{xcolor}
 \usepackage[pagewise]{lineno}
 \usepackage{csquotes}
 \usepackage[version=4]{mhchem} 
@@ -107,7 +119,7 @@
 \makeglossaries
 \loadglsentries{tex/glossary.tex}
 
-%%% colones
+%%% define colones symbol
 
 \DeclareRobustCommand{\Colon}{{%
   \ooalign{%
@@ -133,7 +145,6 @@
 \makeatother
 
 \creflabelformat{equation}{#2\textup{#1}#3}
-
 
 
 %%%%%%%%%%%%%%%%%%
@@ -196,6 +207,9 @@
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{bib/MScThesis.bib}
 
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Appendix}
 \input{tex/8_Appendix.tex}\newpage\cleardoublepage
 
  

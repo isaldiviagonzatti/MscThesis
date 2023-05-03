@@ -15,6 +15,7 @@
 *.out
 *.toc
 *.bbl
+*.brf
 *.gz
 *.blg
 *.acn
