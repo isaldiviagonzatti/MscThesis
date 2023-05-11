@@ -6,12 +6,6 @@ Repository for the MSc Thesis on the Study of the Current State of Pineapple Lea
 
 You can run any file and it should work out of the box. If not, check that the working directory in the script points to the parent folder (e.g., ..//FLP)
 
-If you run the line 
-```python
-os.chdir('..')
-```
-twice, the wd will go one folder out. 
-
 If you are replicating this project and run into problems, please open an issue. Pull requests are welcome
 
 ## Organisation of folders
@@ -21,6 +15,8 @@ Data contains all raw data as downloaded from the source
 Code contains the code to analyse the data
 
 Output contains the analysed data and the generated plots
+
+paperLaTeX contains the source code of the manuscript
 
 The MSc thesis is divided into two main projects: Facility Location Problem (FLP) and Fuzzy Cognitive Map (FCM)
 
