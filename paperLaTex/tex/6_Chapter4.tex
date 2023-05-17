@@ -26,7 +26,7 @@ The production of bioethanol is perhaps the most effective solution to minimise 
 
 Let us now describe the study area in Costa Rica. The United Nations Development Programme (UNDP), the Ministry of Environment and Energy (MINAE), and the National Centre for Geoenvironmental Information (CENIGA) carry out a monitoring of the changes in pineapple crops and their consequences on forest cover using satellite data. They indicate that the average accuracy of the layers is 99.5\%. The latest available data is for 2019 \cite{SNITpina}. We use the data collected by these organisations to determine the location and amount of available PAL in the country.
 
-In \cref{allCRPAL}, the 65,451 hectares of pineapple crops in Costa Rica as of 2019 are depicted. 870 hectares (1.32\% of the total) are located in the west of the country, specifically in Judas, Puntarenas province. 8072 hectares (12.33\% of the total) are clustered in the south, between Potrero Grande and San Isidro de El General. The remaining 59,529 (86\% of the total) of pineapple hectares are located in the northeast of the country, in the regions Huetar Norte and Huetar Caribe. Including crops located in the south and west of the country would hinder the FLP analysis as the area in which the candidate location can be located would be much larger. Since the percentage of PAL in those regions is not large, we narrow the selection and carry out the analysis for the crops located in the north-east of Costa Rica, specifically in the bounding box -85.07, -81.5, 10.09, 11.04 (west, east, south, north). 
+In \cref{allCRPAL}, the 65,451 hectares of pineapple crops in Costa Rica as of 2019 are depicted. 870 hectares (1.32\% of the total) are located in the west of the country, specifically in Judas, Puntarenas province. 8072 hectares (12.33\% of the total) are clustered in the south, between Potrero Grande and San Isidro de El General. The remaining 56,509 (86\% of the total) of pineapple hectares are located in the northeast of the country, in the regions Huetar Norte and Huetar Caribe. Including crops located in the south and west of the country would hinder the FLP analysis as the area in which the candidate location can be located would be much larger. Since the percentage of PAL in those regions is not large, we narrow the selection and carry out the analysis for the crops located in the north-east of Costa Rica, specifically in the bounding box -85.07, -81.5, 10.09, 11.04 (west, east, south, north). 
 
 
 \begin{figure}[H]
@@ -83,17 +83,17 @@ The objective function attempts to minimise the total cost of opening and operat
 
 \subsection{Source of PAL}
 
-Pineapple crops in Costa Rica are harvested on average every two years. One hectare produces around 65,000 pineapple plants, from which 2.5 kg of usable PAL can be extracted per plant, i.e., 162.5 tonnes of PAL per hectare. Therefore, for the northeastern region of Costa Rica, the total amount of PAL available every year is around 4,836,731.25 tonnes (59,529 ha $\times$ 162.5 t)/ 2 years). The data provided by \citeauthor{SNITpina} includes 2925 polygons in which the 59,529 hectares are located. The summary statistics of the polygons' area in hectares are shown in \cref{summaryPolyPAL}. As can be observed, most polygons have between 3 and 19 hectares. 
+Pineapple crops in Costa Rica are harvested on average every two years. One hectare produces around 65,000 pineapple plants, from which 2.5 kg of usable PAL can be extracted per plant, i.e., 162.5 tonnes of PAL per hectare. Therefore, for the northeastern region of Costa Rica, the total amount of PAL available every year is around 4,591,356 tonnes (56,509 ha $\times$ 162.5 t)/ 2 years). The data provided by \citeauthor{SNITpina} includes 2925 polygons in which the 56,509 hectares are located. The summary statistics of the polygons' area in hectares are shown in \cref{summaryPolyPAL}. As can be observed, most polygons have between 3 and 19 hectares. 
 
 
 \begin{table}[!ht]
 \centering 
 \label{summaryPolyPAL}
-\caption[Summary statistics of the pineapple field polygons]{Summary statistics of polygons containing 59,529 pineapple hectares in the northeast of Costa Rica. Units are hectares}
+\caption[Summary statistics of the pineapple field polygons]{Summary statistics of polygons containing 56,509 pineapple hectares in the northeast of Costa Rica. Units are hectares}
 \begin{tabular}{lr} 
 \hline \hline 
- Hectares & 2925.00 \\
- mean     & 19.32   \\
+Polygons & 2925.00 \\
+mean     & 19.32   \\
 std      & 44.67   \\
 min      & 0.50    \\
 25\%     & 2.43    \\
