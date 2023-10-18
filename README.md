@@ -1,6 +1,6 @@
 # A Needle In A Pineapple Field
 
-Repository for the MSc Thesis on the Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular Bioeconomy in Costa Rica by [Ignacio Saldivia Gonzatti](https://www.isaldiviagonzatti.nl/)
+Repository for the MSc Thesis on the Study of the Current State of Pineapple Leaves Valorisation in the Context of Circular Bioeconomy in Costa Rica by [Ignacio Saldivia Gonzatti](https://www.ignaciosg.com)
 
 ## Usage
 
